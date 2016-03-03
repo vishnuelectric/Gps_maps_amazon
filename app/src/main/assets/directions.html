@@ -1,0 +1,96 @@
+<!doctype html>
+<html style = "height:100% ">
+<head >
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<title>InstaWeather HD</title>
+<script src="js/jquery-1.11.1.min.js"> </script>
+<script src="js/jquery.mobile-1.4.3.min.js"></script>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+
+<script src="cordova.js"></script>
+<script src="js/hammer.min.js"></script>
+
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" href="css/leaflet-routing-machine.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script src="js/leaflet-routing-machine.min.js"></script>
+
+
+
+</head>
+<style>
+
+.hed{
+	height: 0%;
+}
+.ged{
+	height: 99%;
+}
+
+
+
+</style>
+
+<body  style="height: 100%" >
+<div data-role="page"  id="page">
+
+	<div data-role="header"  class="ui-grid-b ui-bar " data-position="fixed"  style=" ;background-color: #75ACFF; color:white  ">
+
+<div class="ui-block-a"><div class=" " style="  padding-bottom:5px; height:30px"> <a href="#menupanel" data-role="button" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"> menu </a>
+
+	<a onclick="window.history.back()" data-role="button"class="ui-btn ui-btn-icon-notext ui-icon-back ui-corner-all" > location </a>
+	 </div>
+	 </div>
+    <div class="ui-block-b"><div class="" align="center" style=" padding-top:10px;height:30px">Navigation</div></div>
+    <div class="ui-block-c"><div class="" align="center" style="height:30px">
+
+    	<!--<a onclick="toggleview()" data-role="button"class="ui-btn ui-btn-icon-notext ui-icon-bullets ui-corner-all" > toggle view </a>-->
+    	<a onclick="mylocation()" data-role="button"class="ui-btn ui-btn-icon-notext ui-icon-location ui-corner-all" > location </a>
+
+
+
+
+    	</div> </div>
+	</div><!-- /header -->
+
+
+
+
+	<div role="main" id="main" style="padding:0px  ;color: white;" class="ui-content" >
+	 <div id="map"   style=" display:block; height: 99%; width:100%; position:absolute; color:black"> </div>
+
+
+
+     </div>
+
+	<!-- /content -->
+
+	<!-- /footer -->
+<div data-role="panel"  data-position= "left" data-swipe-close="false" data-display="reveal" data-theme="a" id="menupanel">
+    <!-- panel content goes here -->
+
+   <h3 class="ui-bar ui-bar-a">Start:</h3>
+    <input data-clear-btn="true" name="text-3" id="start" value="" type="text">
+    <br>
+		<h3 class="ui-bar ui-bar-a">Destination: </h3>
+
+		<input data-clear-btn="true" name="text-3" id="end" value="" type="text">
+		<br><br>
+		<button class="ui-btn ui-corner-all ui-shadow" onclick="calcRoute()">Navigate</button>
+
+    </div>
+
+
+
+</div><!-- /page -->
+
+
+
+</body>
+<script src="js/index.js"> </script>
+<script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places,panoramio&key=AIzaSyBeQBZMsbtixmLiKka631KHT78EUZCNfn0&sensor=true&callback=initialise">
+    </script>
+
+</html>
